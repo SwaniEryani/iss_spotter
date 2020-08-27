@@ -1,5 +1,4 @@
-const { nextISSTimesForMyLocation} = require('./iss_promised');
-const request = require('request-promise-native');
+const { nextISSTimesForMyLocation } = require('./iss_promised');
 
 
 const printPassTimes = function(passTimes) {
@@ -16,3 +15,6 @@ nextISSTimesForMyLocation()
   .then((passTimes) => {
     printPassTimes(passTimes);
   })
+  .catch((error) => {
+    console.log("It didn't work: ", error.message);
+  });

@@ -3,11 +3,11 @@ const request = require('request-promise-native');
 const fetchMyIP = function() {
   return request('https://api.ipify.org?format=json');
 };
-const fetchCoordsByIP = function(body) {
+const fetchCoordsByIP = function body) {
   const ip = JSON.parse(body).ip;
-  return request(`https://ipvigilante.com/json/${ip}`);
+  return request(`https://ipvigilante.co/json/${ip}`);
 };
-const fetchISSFlyOverTimes= function (body){
+const fetchISSFlyOverTimes = function(body) {
   // const { latitude, longitude } = JSON.parse(body);
   const latitude = JSON.parse(body).data.latitude;
   const longitude = JSON.parse(body).data.longitude;
@@ -23,4 +23,4 @@ const nextISSTimesForMyLocation = function() {
     });
 };
 
-module.exports = { nextISSTimesForMyLocation};
+module.exports = { nextISSTimesForMyLocation };
